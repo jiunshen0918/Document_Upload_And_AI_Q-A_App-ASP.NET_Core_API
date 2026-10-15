@@ -1,0 +1,9 @@
+Document Analysis Sample Files
+
+- sample_sales_report.xlsx: Excel sales data and total formula.
+- sample_invoice.pdf: PDF invoice with itemized amounts.
+- sample_meeting_minutes.docx: Word meeting minutes and action items.
+- sample_invoice_image.png: invoice image for OCR testing.
+- sample_project_notes.txt: plain-text requirements and expected summary.
+
+All data is fictional and intended for local testing.

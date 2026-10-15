@@ -1,0 +1,45 @@
+Windows Web
+VS Installer install desktop for c++
+
+Android Mobile App
+flutter doctor --android--licenses
+flutter desktop
+flutter run
+
+Linux
+Ubuntu + WSL2
+wsl --install
+- initialize ubuntu
+sudo apt install -y git curl unzip xz-utils zip \
+  libglu1-mesa build-essential clang cmake \
+  ninja-build pkg-config
+
+- install flutter inside ubuntu
+mkdir -p ~/development
+cd ~/development
+git clone https://github.com/flutter/flutter.git -b stable
+
+echo 'export PATH="$HOME/development/flutter/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+
+which flutter
+flutter doctor -v
+(similar to /home/shen0918/development/flutter/bin/flutter)
+
+- enable Linux desktop 
+flutter config --enable-linux-desktop
+
+flutter doctor -v
+(check Linux is downloaded ok)
+
+- test
+wsl -d Ubuntu
+cd /mnt/c/VSCodeProject/Demo/flutter_application_1
+flutter run -d Linux
+
+- swap windows and linux
+flutter clean
+flutter pub get
+
+- run chrome
+flutter run -d chrome
