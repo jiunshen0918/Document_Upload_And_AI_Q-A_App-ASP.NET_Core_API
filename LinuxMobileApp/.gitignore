@@ -1,0 +1,16 @@
+# Build and IDE output
+bin/
+obj/
+.vs/
+*.user
+*.suo
+
+# Uploaded documents may contain private data
+uploads/
+
+# Local backups and secret files
+*.tmp
+.env
+.env.*
+secrets.json
+secrets.*.json

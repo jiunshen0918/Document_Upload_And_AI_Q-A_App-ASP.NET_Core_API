@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+ 
 builder.Services.AddControllers();
 var connectionString = builder.Configuration.GetConnectionString("DatabaseConnection")
     ?? throw new InvalidOperationException("Configure ConnectionStrings:DatabaseConnection for the document database.");
@@ -30,7 +30,7 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
-// The Flutter development client targets the local HTTP profile. Keep that
+// The Flutter development client targets the local HTTP profile. Keep that.
 // connection on HTTP in Development; production should use HTTPS.
 if (!app.Environment.IsDevelopment())
 {

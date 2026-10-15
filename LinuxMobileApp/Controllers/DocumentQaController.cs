@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using LinuxMobileApp.Services;
 
 namespace LinuxMobileApp.Controllers;
-
+ 
 [ApiController]
-[Route("api/documents")]
+[Route("api/documents")] 
 public sealed class DocumentQaController(DocumentsDbContext db, DocumentQaService qaService) : ControllerBase
 {
     [HttpPost("{documentId:guid}/questions")]
