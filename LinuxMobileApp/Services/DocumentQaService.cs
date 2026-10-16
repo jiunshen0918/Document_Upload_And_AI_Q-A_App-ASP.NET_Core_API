@@ -94,7 +94,7 @@ public sealed class DocumentQaService(HttpClient httpClient, IConfiguration conf
         new
         {
             name = "search_document",
-            description = "Search the uploaded document for passages relevant to a specific phrase or topic.",
+            description = "Search the uploaded document for passages relevant to a specific phrase or topic",
             parameters = new
             {
                 type = "OBJECT",
