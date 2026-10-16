@@ -22,6 +22,16 @@ await using (var scope = app.Services.CreateAsyncScope())
 {
     var database = scope.ServiceProvider.GetRequiredService<LinuxMobileApp.Services.DocumentsDbContext>();
     await database.Database.EnsureCreatedAsync();
+
+    var expirationCutoff = DateTimeOffset.UtcNow.AddDays(-30);
+    var deletedDocuments = await database.Documents
+        .Where(document => document.CreatedAt < expirationCutoff)
+        .ExecuteDeleteAsync();
+
+    if (deletedDocuments > 0)
+    {
+        app.Logger.LogInformation("Removed {DocumentCount} document(s) older than 30 days.", deletedDocuments);
+    }
 }
 
 // Configure the HTTP request pipeline.
@@ -44,13 +54,5 @@ if (app.Environment.IsDevelopment())
 app.UseAuthorization();
 
 app.MapControllers();
-
-app.MapGet("/api/hello", () =>
-{
-    return Results.Ok(new
-    {
-        message = "Hello from C# ASP.NET Core!"
-    });
-});
 
 app.Run();
